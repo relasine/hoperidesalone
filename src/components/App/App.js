@@ -4,6 +4,7 @@ import CurrentDate from "../CurrentDate/CurrentDate";
 import InputTodo from "../InputTodo/InputTodo";
 import Todos from "../Todos/Todos";
 import InputName from "../InputName/InputName";
+import Clock from "../Clock/Clock";
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       date: undefined,
       name: undefined,
-      todos: []
+      todos: [],
+      loading: true
     };
   }
 
@@ -64,22 +66,35 @@ class App extends Component {
       backgroundPosition: "center"
     };
 
-    return (
-      <div style={styles} className="app">
-        {this.state.name && (
-          <p className="hello" data-text={`Hello, ${this.state.name}`}>
-            Hello, {this.state.name}
-          </p>
-        )}
-        {!this.state.name && <InputName handleSubmit={this.submitName} />}
-        {this.state.name && <InputTodo handleSubmit={this.addNewTodo} />}
-        {this.state.name && (
-          <Todos removeTodo={this.removeTodo} todos={this.state.todos} />
-        )}
-        <CurrentDate />
-        <p className="hope">Hope Rides Alone</p>
-      </div>
-    );
+    if (!this.state.loading) {
+      return (
+        <div style={styles} className="app">
+          {this.state.name && (
+            <p className="hello" data-text={`Hello, ${this.state.name}`}>
+              Hello, {this.state.name}
+            </p>
+          )}
+          {!this.state.name && <InputName handleSubmit={this.submitName} />}
+          {this.state.name && <InputTodo handleSubmit={this.addNewTodo} />}
+          {this.state.name && (
+            <Todos removeTodo={this.removeTodo} todos={this.state.todos} />
+          )}
+          <CurrentDate />
+          <Clock />
+          <p className="hope">Hope Rides Alone</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="loading">
+          <img
+            onLoad={() => this.setState({ loading: false })}
+            src="./retrowave-landscape.jpeg"
+            style={{ display: "none" }}
+          />
+        </div>
+      );
+    }
   }
 }
 

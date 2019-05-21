@@ -12,6 +12,7 @@ body {
   font-family: "Lazer 84";
   color: #f207b4;
   text-align: center;
+  background: #000;
 
   /* background: #0d0221; */
 }
@@ -23,6 +24,8 @@ body {
   justify-content: center;
   height: 100vh;
   position: relative;
+  animation: fade-in 0.5s linear;
+  opacity: 1;
 }
 
 .date-label {
@@ -50,4 +53,17 @@ body {
   justify-self: flex-end;
   position: absolute;
   bottom: 32px;
+}
+
+input:focus {
+  outline: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
