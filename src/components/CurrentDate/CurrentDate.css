@@ -1,0 +1,10 @@
+.date {
+  font-size: 60px;
+  text-align: center;
+  color: #f207b4;
+  text-shadow: 1px 1px 6px #f207b4;
+}
+
+.date-text {
+  margin: 16px;
+}

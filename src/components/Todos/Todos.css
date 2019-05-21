@@ -1,0 +1,10 @@
+.todos {
+  color: "white";
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  font-family: VCR_OSD_MONO;
+  color: #f2f2f2;
+  text-align: end;
+  list-style: none;
+}

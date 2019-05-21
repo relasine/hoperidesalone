@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Lazer 84";
+  src: url("../../fonts//Lazer84.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "VCR_OSD_MONO";
+  src: url("../../fonts//VCR_OSD_MONO.ttf") format("truetype");
+}
+
+body {
+  font-family: "Lazer 84";
+  color: #f207b4;
+  text-align: center;
+
+  /* background: #0d0221; */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.date-label {
+  margin-bottom: 0;
+  text-shadow: 1px 1px 4px #f207b4;
+  font-size: 40px;
+}
+
+.hello {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  margin: 0;
+  color: #d9d9e8;
+  text-shadow: 1px 1px 1px #d9d9e8;
+  font-family: VCR_OSD_MONO;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.hope {
+  color: #d9d9e8;
+  text-shadow: 1px 1px 3px #d9d9e8;
+  font-size: 30px;
+  justify-self: flex-end;
+  position: absolute;
+  bottom: 32px;
+}
